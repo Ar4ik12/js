@@ -1,0 +1,25 @@
+.galleryUl {
+  display: flex;
+  justify-content: space-between;
+}
+
+.liGallery {
+  list-style: none;
+}
+
+.gallery {
+  width: 400px;
+  height: 300px;
+}
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
