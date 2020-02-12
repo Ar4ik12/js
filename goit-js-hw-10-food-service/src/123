@@ -1,0 +1,24 @@
+let settings = localStorage.getItem('theme');
+const change = document.querySelector('input.js-switch-input');
+function changeTheme(settings) {
+  if (settings === 'dark-theme') {
+    document.classList.remove(Theme.LIGHT);
+    document.classList.add(Theme.DARK);
+    change.checked = true;
+  }
+}
+// function onClick(e) {
+//   if (e.target.cheked) {
+//     document.body.classList.remove(Theme.LIGHT);
+//     document.body.classList.add(Theme.DARK);
+//     settings = localStorage.setItem('theme', 'dark');
+//   } else {
+//     document.body.classList.remove(Theme.DARK);
+//     document.body.classList.add(Theme.LIGHT);
+//     settings = localStorage.setItem('theme', 'light');
+//   }
+// }
+menuAll(menuBar);
+changeTheme(settings);
+change.addEventListener('change', changeTheme);
+console.log(changeTheme);
