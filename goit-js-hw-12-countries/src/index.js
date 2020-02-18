@@ -17,6 +17,7 @@ function inputValue(data) {
 
 function buildResult(data) {
   if (data.length > 10) {
+    clearInput();
     PNotify.error({
       title: 'Oh No!',
       text: 'Too many countries!',
@@ -25,10 +26,16 @@ function buildResult(data) {
     const markupOne = data.map(name => countryInputOne(name)).join('');
     clearInput();
     divCountry.insertAdjacentHTML('beforeend', markupOne);
+    PNotify.closeAll();
   } else if (data.length >= 2 && data.length <= 10) {
     const markupAll = data.map(name => countryInputAll(name)).join('');
     clearInput();
     divCountry.insertAdjacentHTML('beforeend', markupAll);
+    PNotify.closeAll();
+  } else {
+    return;
+    PNotify.closeAll();
+    clearInput();
   }
 }
 
